@@ -6,7 +6,6 @@
     "build:debug:mangled": "tsx build-game.ts --debug --mangle --html=build/debug_mangled.html",
     "build:preprod": "tsx build-game.ts --mangle --minify --roadroll-level=1 --html=build/preprod.html",
     "build:prod": "tsx build-game.ts --mangle --minify --roadroll-level=2 --html=build/index.html",
-
     "zip:preprod": "tsx build-zip.ts --html=build/preprod.html --zip=build/preprod.zip",
     "zip:prod": "tsx build-zip.ts --html=build/index.html --zip=build/game.zip --optimize"
   },
@@ -25,6 +24,7 @@
   },
   "devDependencies": {
     "@types/clean-css": "^4.2.11",
-    "@types/html-minifier": "^4.0.5"
+    "@types/html-minifier": "^4.0.5",
+    "vite": "^6.2.1"
   }
 }
