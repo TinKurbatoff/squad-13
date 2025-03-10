@@ -23,6 +23,7 @@ const JS_FILES = [
   "util/format-time.js",
   "util/rng.js",
   "util/explosion.js",
+  "util/round-shot.js",
 
   "engine/entity.js",
   "engine/world.js",

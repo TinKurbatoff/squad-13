@@ -2,12 +2,12 @@ class MachineGunRound extends Entity {
     constructor(owner) {
         super();
 
-        this.x = owner.x + cos(owner.angle) * 20;
-        this.y = owner.y + sin(owner.angle) * 20;
+        this.x = owner.x + cos(owner.angle) * 10;
+        this.y = owner.y + sin(owner.angle) * 10;
         this.angle = owner.angle;
         this.owner = owner;
-        this.speed = 500;
-        this.radius = 10;
+        this.speed = 5000;
+        this.radius = 5;
 
         this.nextParticle = 0;
 
@@ -16,14 +16,14 @@ class MachineGunRound extends Entity {
     
     explode() {
         this.world.remove(this);
-        sound(...[,,74,.06,.29,.54,4,3.1,,-8,,,,1.3,,.2,,.4,.24]);
-        explosion(this.world, this, 80, this.owner);
+        // sound(...[,,74,.06,.29,.54,4,3.1,,-8,,,,1.3,,.2,,.4,.24]);
+        roundShot(this.world, this, 12, this.owner);
     }
 
     cycle(elapsed) {
         super.cycle(elapsed);
 
-        if (this.age > 2) {
+        if (this.age > 0.08) {
             this.explode();
             return;
         }
@@ -63,14 +63,14 @@ class MachineGunRound extends Entity {
         this.y += sin(this.angle) * elapsed * this.speed;
 
         if ((this.nextParticle -= elapsed) <= 0) {
-            this.nextParticle = 1 / 60;
+            this.nextParticle = 1 / 680;
 
             this.world.add(new Particle(
-                '#fff',
-                [rnd(5, 10), rnd(10, 20)],
-                [this.x, this.x + rnd(-10, 10)],
-                [this.y, this.y + rnd(-10, 10)],
-                rnd(1.2, 3),
+                '#f88',
+                [rnd(2, 7), rnd(5, 10)],
+                [this.x, this.x + rnd(-3, 3)],
+                [this.y, this.y + rnd(-3, 3)],
+                rnd(0.7, 1),
             ));
         }
     }

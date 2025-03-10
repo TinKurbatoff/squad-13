@@ -27,7 +27,7 @@ class Chopper extends Entity {
         this.radius = 35;
 
         this.lastShot = 0;
-        this.shotInterval = 1;
+        this.shotInterval = 0.1;
 
         this.propellerAngle = 0;
 
@@ -120,8 +120,10 @@ class Chopper extends Entity {
     }
 
     get readyToShoot() {
+        // return true;
         if (this.age < this.damagedEnd) return false;
-        return this.age - this.lastShot > this.shotInterval;
+        // return true;
+        return this.age - this.lastShot > 0.2; // this.shotInterval;
     }
 
     shootingTarget() {
@@ -193,13 +195,14 @@ class Chopper extends Entity {
 
         // Shooting
         if (this.readyToShoot && this.controls.shoot) {
-            const missile = new Missile(this);
-            this.world.add(missile);
+            // const missile = new Missile(this);
+            const round = new MachineGunRound(this);
+            this.world.add(round);
 
             if (this.lockedTarget && this.lockedTargetFactor >= 1) {
-                missile.angle = angleBetween(this, this.lockedTarget);
+                round.angle = angleBetween(this, this.lockedTarget);
                 if (this.buckets.includes('player')) { // Boy this is ugly, please forgive me for my sin
-                    missile.target = this.lockedTarget;
+                    round.target = this.lockedTarget;
                 }
             }
 
