@@ -6,6 +6,7 @@ class Particle extends Entity {
         valuesX,
         valuesY,
         duration,
+        shape = 'arc',
     ) {
         super();
         this.color = color;
@@ -13,6 +14,7 @@ class Particle extends Entity {
         this.valuesX = valuesX;
         this.valuesY = valuesY;
         this.duration = duration;
+        this.shape = shape;
     }
 
     cycle(elapsed) {
@@ -34,6 +36,16 @@ class Particle extends Entity {
 
         ctx.fillStyle = this.color;
         ctx.globalAlpha = this.interp([1, 0]);
-        ctx.fillRect(-size / 2, -size / 2, size, size);
-    }
+        if (this.shape === 'square')
+        {ctx.fillRect(-size / 2, -size / 2, size, size);}
+        else if (this.shape === 'arc')
+        {ctx.beginPath();
+        ctx.arc(0, 0, size / 4, 0, 2 * PI);
+        ctx.fill();}
+        else {
+            ctx.rotate(- PI / 4);
+            ctx.fillRect(0,0 , size, 1);
+        }
+    
+}
 }

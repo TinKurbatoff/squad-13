@@ -23,6 +23,14 @@ const controls = [
         ctx.arc(0, 0, mobileControlsHeight() / 4, 0, PI * 2);
         ctx.fill();
     }],
+    [(player) => player.controls.missile, () => {
+        ctx.rotate(-PI / 2);
+
+        ctx.beginPath();
+        ctx.arc(0, 0, mobileControlsHeight() / 4, 0, PI * 2);
+        ctx.fill();
+    }],
+
     [(player) => player.controls.up, () => {
         ctx.rotate(-PI / 2);
         renderArrow();

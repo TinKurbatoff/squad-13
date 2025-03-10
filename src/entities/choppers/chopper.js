@@ -21,6 +21,7 @@ class Chopper extends Entity {
             left: false,
             right: false,
             shoot: false,
+            missile: false,
             down: false,
         };
 
@@ -123,8 +124,16 @@ class Chopper extends Entity {
         // return true;
         if (this.age < this.damagedEnd) return false;
         // return true;
-        return this.age - this.lastShot > 0.2; // this.shotInterval;
+        return this.age - this.lastShot > this.shotInterval;
     }
+
+    get readyToShootMissile() {
+        if (!this.readyToShoot) return null;
+        if (this.age < this.damagedEnd) return false;
+        // return true;
+        return (this.age - this.lastShot) > (this.shotInterval * 15);
+    }
+
 
     shootingTarget() {
         if (!this.readyToShoot) return null;
@@ -193,9 +202,8 @@ class Chopper extends Entity {
             this.lockedTargetTime = 0;
         }
 
-        // Shooting
+        // Shooting Machine Gun
         if (this.readyToShoot && this.controls.shoot) {
-            // const missile = new Missile(this);
             const round = new MachineGunRound(this);
             this.world.add(round);
 
@@ -208,6 +216,22 @@ class Chopper extends Entity {
 
             this.lastShot = this.age;
         }
+
+        // Shooting Missile
+        if (this.readyToShootMissile && this.controls.missile) {
+            const missile = new Missile(this);
+            this.world.add(missile);
+
+            if (this.lockedTarget && this.lockedTargetFactor >= 1) {
+                missile.angle = angleBetween(this, this.lockedTarget);
+                if (this.buckets.includes('player')) { // Boy this is ugly, please forgive me for my sin
+                    missile.target = this.lockedTarget;
+                }
+            }
+
+            this.lastShot = this.age;
+        }
+        
 
         this.updateGlobalHitboxes();
 
@@ -292,6 +316,7 @@ class Chopper extends Entity {
                 [x, x + rnd(-100, 100)],
                 [y, y - rnd(50, 150)],
                 rnd(1.2, 3),
+                'square',
             );
             this.world.add(particle);
         }
@@ -371,6 +396,7 @@ class Chopper extends Entity {
                     [x, x + rnd(-30, 30)],
                     [y, y + rnd(-20, -10)],
                     rnd(0.8, 1.5),
+                    'square',
                 );
                 this.world.add(particle);
             }

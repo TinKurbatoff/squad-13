@@ -72,6 +72,7 @@ class Missile extends Entity {
                 [this.x, this.x + rnd(-10, 10)],
                 [this.y, this.y + rnd(-10, 10)],
                 rnd(1.2, 3),
+                'square',
             ));
         }
     }

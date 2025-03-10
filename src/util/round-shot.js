@@ -17,16 +17,17 @@ function roundShot(
     //     ));
     // }
 
-    // Shot
+    // Impact
     for (let i = 0 ; i < 5 ; i++) {
         const x = position.x + rnd(-radius * 8 / 8, radius * 2 / 8);
-        const y = position.y + rnd(-radius * 2 / 8, radius * 2 / 8);
+        const y = position.y + rnd(-radius * 8 / 8, radius * 2 / 8);
         world.add(new Particle(
             pick(['#000', '#ff0', '#f80']),
             [rnd(1, 30), 0],
             [x, x + rnd(-50, 50)],
             [y, y - rnd(20, 50)],
             rnd(1.2, 3),
+            'arc',
         ));
     }
 

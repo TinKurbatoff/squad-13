@@ -39,6 +39,7 @@ class Fireball extends Entity {
                 [this.x, this.x + rnd(-5, 5)],
                 [this.y, this.y - rnd(20, 30)],
                 rnd(1.2, 3),
+                'square',
             ));
         }
     }

@@ -26,6 +26,7 @@ function explosion(
             [x, x + rnd(-100, 100)],
             [y, y - rnd(50, 150)],
             rnd(1.2, 3),
+            'square',
         ));
     }
 

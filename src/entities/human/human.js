@@ -30,6 +30,7 @@ class Human extends Entity {
                 [x, x + cos(angle) * dist],
                 [y, y + sin(angle) * dist],
                 rnd(2, 4),
+                'square',
             ));
         }
     }

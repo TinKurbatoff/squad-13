@@ -23,7 +23,7 @@ class MachineGunRound extends Entity {
     cycle(elapsed) {
         super.cycle(elapsed);
 
-        if (this.age > 0.08) {
+        if (this.age > 0.09) {
             this.explode();
             return;
         }
@@ -66,11 +66,12 @@ class MachineGunRound extends Entity {
             this.nextParticle = 1 / 680;
 
             this.world.add(new Particle(
-                '#f88',
+                '#FFA500', // Hex orange color
                 [rnd(2, 7), rnd(5, 10)],
                 [this.x, this.x + rnd(-3, 3)],
                 [this.y, this.y + rnd(-3, 3)],
                 rnd(0.7, 1),
+                'square',
             ));
         }
     }

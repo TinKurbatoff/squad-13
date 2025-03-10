@@ -3,7 +3,7 @@ DIFFICULTY_SETTINGS = [
         nomangle('EASY'),
         true, // simplifiedPhysics
         0.5, // uncontrollableDuration
-        0.5, // playerShotInterval
+        0.05, // playerShotInterval 0.5
         0.5, // playerLockDuration
         6, // rebelShotInterval
         6, // chopperShotInterval
@@ -12,7 +12,7 @@ DIFFICULTY_SETTINGS = [
         nomangle('NORMAL'),
         false, // simplifiedPhysics
         1, // uncontrollableDuration
-        1, // playerShotInterval
+        0.1, // playerShotInterval 1
         1, // playerLockDuration
         4, // rebelShotInterval
         3, // chopperShotInterval

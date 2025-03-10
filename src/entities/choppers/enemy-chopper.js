@@ -62,6 +62,7 @@ class EnemyChopper extends Chopper {
         }
 
         this.controls.shoot = this.lockedTargetFactor >= 1;
+        this.controls.missile = this.lockedTargetFactor >= 1;
 
         if (this.lockedTargetFactor > 0 && this.age - this.lastWarningBeep > 0.2) {
             this.lastWarningBeep = this.age;

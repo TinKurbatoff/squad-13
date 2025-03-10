@@ -37,6 +37,7 @@ class Player extends Chopper {
         controls.up = (DOWN[38] || DOWN[87] || DOWN[90]);
         controls.down = (DOWN[40] || DOWN[83]);
         controls.shoot = DOWN[32];
+        controls.missile = DOWN[86];
 
         // Touch controls
         for (const touch of TOUCHES) {
