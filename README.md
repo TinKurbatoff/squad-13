@@ -1,5 +1,9 @@
 # SQUAD 13 | Modified version
 
+<p align="center">
+<img height=50 src="/assets/squad_alpha.png">
+</p>
+
 The original version was created by @remvst
 Available at [GitHub repo](https://github.com/remvst/squad13)
 

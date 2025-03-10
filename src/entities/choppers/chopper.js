@@ -434,7 +434,7 @@ class Chopper extends Entity {
             ctx.closePath(); // Close the shape
             ctx.fill(); // Fill the shape with the current fillStyle   
 
-            ctx.fillRect(15, 13, 12, 1); // Turret
+            ctx.fillRect(15, 2, 15, 1.5); // Turret
 
             ctx.fillRect(-20, 20, 40, 2); // Rails
             ctx.fillRect(-10, 0, 2, 20); // Rails

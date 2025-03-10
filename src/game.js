@@ -214,9 +214,9 @@ class Game {
 
     async gameLoop() {
         const levels = [
-            tutorialFly,
-            firstMountain,
-            mountainThenCeiling,
+            // tutorialFly,
+            // firstMountain,
+            // mountainThenCeiling,
             tutorialShoot,
             caveThenCeiling,
             lowCeiling,
