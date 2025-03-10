@@ -13,7 +13,7 @@ class Game {
 
         if (SCREENSHOT) {
             CANVAS_WIDTH = 4096;
-            CANVAS_HEIGHT = 4096;
+            CANVAS_HEIGHT = 8096;
             can.width = CANVAS_WIDTH;
             can.height = CANVAS_HEIGHT;
 
@@ -29,7 +29,7 @@ class Game {
 
             world.render();
 
-            throw new Error('plz taek screenshot');
+            throw new Error('plz take screenshot');
         }
 
         (async () => {

@@ -413,15 +413,32 @@ class Chopper extends Entity {
                 ctx.scale(cos(ratio * PI * 2), 1);
             }
 
-            ctx.fillStyle = '#000';
-            ctx.fillRect(-20, -15, 40, 30);
+            ctx.fillStyle = '#3D371B'; // Color
+            // ctx.fillRect(-20, -15, 40, 30); // Body
+            ctx.beginPath();
+            ctx.moveTo(-20, -10); // Start point
+            ctx.lineTo(20, -15);
+            ctx.lineTo(30, 10);
+            ctx.lineTo(8, 17);
+            ctx.lineTo(-24, 2);
+            ctx.closePath(); // Close the shape
+            ctx.fill(); // Fill the shape with the current fillStyle            
 
-            ctx.fillRect(0, -10, -50, 5);
-            ctx.fillRect(-60, -20, 10, 15);
+            ctx.fillRect(0, -10, -50, 5); // Tail
+            ctx.beginPath();
+            ctx.moveTo(-60, -20); // Start point
+            ctx.lineTo(-50, -20);
+            ctx.lineTo(-50, 0);
+            ctx.lineTo(-60, 0);
+            ctx.lineTo(-65, -2);
+            ctx.closePath(); // Close the shape
+            ctx.fill(); // Fill the shape with the current fillStyle   
 
-            ctx.fillRect(-20, 20, 40, 2);
-            ctx.fillRect(-10, 15, 2, 5);
-            ctx.fillRect(10, 15, 2, 5);
+            ctx.fillRect(15, 13, 12, 1); // Turret
+
+            ctx.fillRect(-20, 20, 40, 2); // Rails
+            ctx.fillRect(-10, 0, 2, 20); // Rails
+            ctx.fillRect(10, 15, 2, 5); // Rails
 
 
             ctx.fillRect(-2, 0, 4, -22);

@@ -153,7 +153,7 @@ ceiling = (world, startX, endX, minY, maxY, periodCount = 1) => {
 
 tutorialFly = (world) => {
     const player = spawn(world, 0);
-    setTarget(world, 1000);
+    setTarget(world, 4000);
 
     water(world, 400);
 
