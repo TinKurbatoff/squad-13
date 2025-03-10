@@ -1,3 +1,8 @@
+# SQUAD 13 | Modified version
+
+The original version was created by @remvst
+Available at [GitHub repo](https://github.com/remvst/squad13)
+
 <p align="center">
 <img src="/assets/gameplay-screenshot.png">
 </p>
@@ -9,8 +14,6 @@
 > SQUAD 13 is feared even by the most wicked evil terrorists.
 >
 > This is their story.
-
-# SQUAD 13
 
 **SQUAD 13** is my entry for 2024's [JS13K](https://js13kgames.com/).
 The theme for the competition was **triskaidekaphobia** (fear of the number 13).
@@ -34,5 +37,4 @@ make # Make all of the above
 # License
 
 Feel free to read the code but don't use it for commercial purposes. The game is the result of a lot of hard work and I wish to maintain all rights to it.
-
 Please reach out if you wish to distribute the game on your portal.
