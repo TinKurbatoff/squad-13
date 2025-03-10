@@ -133,7 +133,7 @@ class Game {
         this.paused = true;
         this.pauseWorld = new World();
 
-        const title = new Title(nomangle('SQUAD 13'));
+        const title = new Title(nomangle('SQUAD ALPHA'));
 
         const promptSet = new PromptSet([
             new StartPrompt(
@@ -214,15 +214,15 @@ class Game {
 
     async gameLoop() {
         const levels = [
-            tutorialFly,
-            firstMountain,
-            mountainThenCeiling,
-            tutorialShoot,
-            caveThenCeiling,
-            lowCeiling,
-            mountainChopperCeilingChopper,
-            hardMountains,
-            tightSqueezes,
+            // tutorialFly,
+            // firstMountain,
+            // mountainThenCeiling,
+            // tutorialShoot,
+            // caveThenCeiling,
+            // lowCeiling,
+            // mountainChopperCeilingChopper,
+            // hardMountains,
+            // tightSqueezes,
             doubleChopperNonsense,
             smallMountainSuccession,
             nightMountains,
@@ -270,7 +270,7 @@ class Game {
 
                 // Force camera to update
                 const camera = firstItem(this.world.bucket('camera'));
-                camera.cycle(2);
+                camera.cycle(5);
 
                 const missionPrisoners = Array.from(this.world.bucket('prisoner')).length;
 
@@ -375,7 +375,7 @@ class Game {
             [nomangle('CRASHES'), `${totalDeaths}`],
             ['', ''],
         ], [
-            nomangle(`I finished SQUAD 13 in `),
+            nomangle(`I finished SQUAD ALPHA in `),
             formatTime(this.age - startTime),
             nomangle(' after crashing '),
             totalDeaths,
@@ -401,7 +401,7 @@ class Game {
         {
             this.pauseWorld = new World();
             const exposition = new Exposition([
-                nomangle('When all hope is lost, the World Police Organization sends SQUAD 13.'),
+                nomangle('When all hope is lost, the World Police Organization sends ALPHA.'),
                 ' '.repeat(10),
                 nomangle('They are tasked with the most dangerous missions.'),
             ], true);
@@ -417,7 +417,7 @@ class Game {
         {
             this.pauseWorld = new World();
             const exposition = new Exposition([
-                nomangle('SQUAD 13 is feared even by the most wicked evil terrorists.'),
+                nomangle('SQUAD ALPHA is feared even by the most wicked evil terrorists.'),
                 ' '.repeat(10),
                 nomangle('This is their story.'),
             ], true);

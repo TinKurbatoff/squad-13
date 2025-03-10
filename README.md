@@ -11,16 +11,13 @@ Available at [GitHub repo](https://github.com/remvst/squad13)
 <img src="/assets/gameplay-screenshot.png">
 </p>
 
-> When all hope is lost, the World Police Organization sends SQUAD 13.
+> When all hope is lost, the World Police Organization sends SQUAD ALPHA.
 >
 > They are tasked with the most dangerous missions.
 >
-> SQUAD 13 is feared even by the most wicked evil terrorists.
+> SQUAD ALPHA is feared even by the most wicked evil terrorists.
 >
 > This is their story.
-
-**SQUAD 13** is my entry for 2024's [JS13K](https://js13kgames.com/).
-The theme for the competition was **triskaidekaphobia** (fear of the number 13).
 
 The game is inspired by the helicopter game, [Rashlander](https://store.steampowered.com/app/1054270/RASHLANDER/), and Metal Gear Solid V.
 

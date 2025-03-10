@@ -1,4 +1,4 @@
-class Missile extends Entity {
+class MachineGunRound extends Entity {
     constructor(owner) {
         super();
 
@@ -11,10 +11,9 @@ class Missile extends Entity {
 
         this.nextParticle = 0;
 
-        // sound(...[2.1,,51,.01,.12,.15,2,2.7,17,-19,,,,,,.2,.29,.93,.16]);
-        sound(...[24.1,,-1,1.16,.1,.3,24,2.7,-18,-3,,,,,,1.2,.69,4.93,-.16]);
+        sound(...[2.1,,51,.01,.12,.15,2,2.7,17,-19,,,,,,.2,.29,.93,.16]);
     }
-
+    
     explode() {
         this.world.remove(this);
         sound(...[,,74,.06,.29,.54,4,3.1,,-8,,,,1.3,,.2,,.4,.24]);
@@ -76,3 +75,11 @@ class Missile extends Entity {
         }
     }
 }
+
+//
+// This is a simple example of a class that extends Weapon. It has a name of
+// 'Machine Gun', a damage of 10, and a rate of fire of 10. This class is
+// incomplete, but it demonstrates how to extend Weapon. The constructor should
+// call the superclass constructor with the same arguments as Weapon. The
+// constructor should also set any additional properties that are specific to  
+
